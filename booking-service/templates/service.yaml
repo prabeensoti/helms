@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}
+  labels:
+    app: {{ .Chart.Name }}
+    {{- if not .Values.isSpringboot }}
+    spring-boot: {{ .Values.isSpringboot | default false}}
+    {{- end }}
+spec:
+  ports:
+    - port: {{ .Values.service.port | default 80}}
+      protocol: {{ .Values.service.protocol | default "TCP"}}
+      targetPort: {{ .Values.service.targetPort | default 80}}
+  selector:
+    app: {{ .Chart.Name }}
+  type: {{ .Values.service.type | default "ClusterIP"}}
