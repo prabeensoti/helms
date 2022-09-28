@@ -7,7 +7,7 @@ appVersion: 1.0.0
 icon: "https://www.clipartmax.com/png/small/195-1955230_cloud-gateway-spring-cloud-contract-logo.png"
 dependencies:
   - name: booking-database-service
-    repository: file://./charts/booking-database-service-1.1.0.tgz
+    repository:  https://prabeensoti.github.io/helms/booking-service/charts/booking-database-service-1.1.0.tgz
     version: 1.1.0
 maintainers:
   - email: prabeen.soti@hotmail.com
