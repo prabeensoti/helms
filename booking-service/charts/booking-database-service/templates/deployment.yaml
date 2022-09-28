@@ -1,29 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "service.fullname" . }}
+  name: booking-database-service
   labels:
-    app: {{ include "service.fullname" . }}
+    app: booking-database-service
 spec:
-  replicas: {{ .Values.replicaCount | default 1 }}
+  replicas: 1
   selector:
     matchLabels:
-      app: {{ include "service.fullname" . }}
+      app: booking-database-service
   template:
     metadata:
       labels:
-        app: {{ include "service.fullname" . }}
+        app: booking-database-service
     spec:
       containers:
-      - name: {{ include "service.fullname" . }}
-        image: {{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}
-        imagePullPolicy: {{ .Values.image.pullPolicy }}
+      - name: booking-database-service
+        image: mysql:latest
         ports:
-        - containerPort: {{ .Values.service.port | default 80 }}
+        - containerPort: 3306
         volumeMounts:
-        - name: {{ .Values.volume.name }}
-          mountPath: {{ .Values.volume.path }}
+        - name: booking-mysql-volume
+          mountPath: /var/lib/mysql
       volumes:
-      - name: {{ .Values.volume.name }}
+      - name: booking-mysql-volume
         persistentVolumeClaim:
-          claimName: {{ .Values.volume.claim.name }}
+          claimName: booking-mysql-pv-claim
