@@ -5,9 +5,7 @@ metadata:
   labels:
     app: {{ include "service.fullname" . }}
 spec:
-  {{ if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount | default 1 }}
-  {{ end }}
   selector:
     matchLabels:
       app: {{ include "service.fullname" . }}
@@ -21,8 +19,7 @@ spec:
         image: {{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
-        - containerPort: {{ .Values.service.port | default 80 }}
-        {{ if not .Values.health.enabled }}
+        - containerPort: {{ .Values.service.port | default 80 }}{{ if not .Values.health.enabled }}
         readinessProbe:
           httpGet:
             path: {{ .Values.health.readinessProbe.path }}

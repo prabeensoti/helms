@@ -3,13 +3,13 @@ entries:
   booking-service:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2022-09-28T13:50:05.336448708-05:00"
+    created: "2022-09-28T14:12:52.706121392-05:00"
     dependencies:
     - name: booking-database-service
       repository: https://prabeensoti.github.io/helms/booking-service/charts/booking-database-service-1.1.0.tgz
       version: 1.1.0
     description: A Helm chart for booking-service in Kubernetes
-    digest: 6fae22963cf8d0e349dd57a889a8fad53c2ce82717527f72b29c8ec3a833db53
+    digest: 2ea5579c2d39b537479f6cbd163d2237ba30f0cb99d1d808413565dd803501ca
     icon: https://www.clipartmax.com/png/small/195-1955230_cloud-gateway-spring-cloud-contract-logo.png
     maintainers:
     - email: prabeen.soti@hotmail.com
@@ -19,4 +19,4 @@ entries:
     urls:
     - https://prabeensoti.github.io/helms/booking-service-1.1.0.tgz
     version: 1.1.0
-generated: "2022-09-28T13:50:05.335596417-05:00"
+generated: "2022-09-28T14:12:52.70470563-05:00"

@@ -9,9 +9,9 @@ spec:
   capacity:
     storage: {{ .Values.volume.storage }}
   accessModes:
-    - {{ .Values.volume.accessModes }}
+    - {{ .Values.volume.accessMode }}
   hostPath:
-    path: {{ .Values.volume.hostPath }}
+    path: "{{ .Values.volume.hostPath }}"
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -20,7 +20,7 @@ metadata:
 spec:
   storageClassName: {{ .Values.volume.storageClassName }}
   accessModes:
-    - {{ .Values.volume.accessModes }}
+    - {{ .Values.volume.accessMode }}
   resources:
     requests:
       storage: {{ .Values.volume.storage }}

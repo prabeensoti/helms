@@ -10,3 +10,4 @@ spec:
     protocol: {{ .Values.service.prtocal | default "TCP" }}
   selector:
     app: {{ include "service.fullname" . }}
+  type: {{ .Values.service.type | default "ClusterIP"}}

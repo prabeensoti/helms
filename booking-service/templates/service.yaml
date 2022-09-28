@@ -4,9 +4,7 @@ metadata:
   name: {{ .Chart.Name }}
   labels:
     app: {{ .Chart.Name }}
-    {{- if not .Values.isSpringboot }}
-    spring-boot: {{ .Values.isSpringboot | default false}}
-    {{- end }}
+    spring-boot: "{{ .Values.isSpringboot | default false}}"
 spec:
   ports:
     - port: {{ .Values.service.port | default 80}}
