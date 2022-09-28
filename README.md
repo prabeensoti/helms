@@ -12,3 +12,7 @@
 ## history and rollback
 `helm history RELEASE –n <namespace> `
 `helm rollback <release> [REVISION] -n <namespace> `
+##
+`helm lint ./booking-service/charts/booking-database-service`
+`helm package ./booking-service/charts/booking-database-service`
+##

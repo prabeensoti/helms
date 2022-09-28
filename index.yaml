@@ -1,18 +1,18 @@
 apiVersion: v1
 entries:
-  booking-service:
+  booking-database-service:
   - apiVersion: v2
     appVersion: 1.1.0
-    created: "2022-09-27T23:54:01.276095467-05:00"
-    description: A Helm chart for Kubernetes
-    digest: 265156cbb143fe70f50d41d50fac879b9e8f1e7f3c6cafb3fdc5c68b25eeb3e6
+    created: "2022-09-28T11:53:56.641544126-05:00"
+    description: A Helm chart for booking-database-service in Kubernetes
+    digest: 2f56b7578304224e6bea0fcb5fc78ecb54b8659d68153450d5a181d1b3f2b491
     icon: https://www.clipartmax.com/png/small/195-1955230_cloud-gateway-spring-cloud-contract-logo.png
     maintainers:
     - email: prabeen.soti@hotmail.com
       name: Prabeen Soti
-    name: booking-service
+    name: booking-database-service
     type: application
     urls:
-    - https://github.com/prabeensoti/helms.git/booking-service-0.1.0.tgz
-    version: 0.1.0
-generated: "2022-09-27T23:54:01.275470312-05:00"
+    - https://github.com/prabeensoti/helms/booking-database-service-1.1.0.tgz
+    version: 1.1.0
+generated: "2022-09-28T11:53:56.640789993-05:00"
