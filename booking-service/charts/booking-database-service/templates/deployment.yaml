@@ -19,6 +19,12 @@ spec:
         image: mysql:latest
         ports:
         - containerPort: 3306
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: booking-mysqldb
+              key: DATABASE_PASSWORD
         volumeMounts:
         - name: booking-mysql-volume
           mountPath: /var/lib/mysql
